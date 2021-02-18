@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kubia-deployment
+  labels:
+    app: kubia
+spec:
+  replicas: 1
+  template:
+    metadata:
+      name: letskube
+      labels:
+        app: letskube
+    spec:
+      containers:
+        - name: kubia
+          image: commonregistryacr.azurecr.io/kubia:latest
+          imagePullPolicy: IfNotPresent
+      restartPolicy: Always
+  selector:
+    matchLabels:
+      app: letskube
+
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: letskube-service
+spec:
+  selector:
+    app: kubia
+  ports:
+    - port: 80
+  type: LoadBalancer

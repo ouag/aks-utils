@@ -1,0 +1,5 @@
+com/ouag/demo/aksutils/controllers/StatusController.class
+com/ouag/demo/aksutils/config/AKSUtilsConfiguration.class
+com/ouag/demo/aksutils/service/StatusService.class
+com/ouag/demo/aksutils/service/MetricsServices.class
+com/ouag/demo/aksutils/AksUtilsApplication.class
